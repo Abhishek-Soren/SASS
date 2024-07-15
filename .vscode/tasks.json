@@ -1,0 +1,23 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Compile SASS",
+      "type": "shell",
+      "command": "/c/Program Files/Git/usr/bin/bash.exe",
+      "args": [
+        "-c",
+        "scss=\"${file}\" && css_dir=\"$(dirname \"$scss\")/../css\" && mkdir -p \"$css_dir\" && css_file=\"$css_dir/$(basename \"$scss\" .scss).css\" && sass --no-source-map \"$scss\" \"$css_file\""
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": ["$sass"],
+      "detail": "A task to compile style.scss to its corresponding .css file in a css subfolder using Git Bash"
+    }
+  ]
+}
