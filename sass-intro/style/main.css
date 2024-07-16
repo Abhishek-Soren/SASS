@@ -1,7 +1,51 @@
-body {
-  background-color: lightcoral;
-  font-size: small;
+.footer p {
+  border: 3px solid red;
+  padding: 200px;
+}
+
+.nav {
+  background-color: #b37400;
+}
+.nav ul li {
+  list-style: none;
+}
+.nav ul li a {
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+}
+.nav ul li a:hover {
+  color: royalblue;
+}
+
+.heading, .footer h3, .banner h1 {
+  background-color: lightseagreen;
+}
+
+.banner p {
+  font-size: 40px;
+}
+.banner h1 {
+  font-size: 40px;
+  color: white;
   text-align: center;
-  font-family: "Courier New", Courier, monospace;
-  font-weight: 600;
+  transition: background-color 300ms, color 300ms;
+}
+.banner h1:hover {
+  background-color: orange;
+  color: royalblue;
+}
+
+.footer p {
+  font-size: 30px;
+}
+.footer h3 {
+  font-size: 30px;
+  color: white;
+  text-align: center;
+  transition: background-color 300ms, color 300ms;
+}
+.footer h3:hover {
+  background-color: orange;
+  color: royalblue;
 }

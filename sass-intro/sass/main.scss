@@ -1,7 +1,81 @@
-body {
-  background-color: lightcoral;
-  font-size: small;
+@import "test";
+
+$color-primary: orange;
+$color-secondary: white;
+$color-tertiary: royalblue;
+$color-quaternary: lightseagreen;
+
+$font-lg: 40px;
+$font-md: 30px;
+$font-sm: 20px;
+
+.nav {
+  background-color: darken($color-primary, 15%);
+
+  ul li {
+    list-style: none;
+
+    a {
+      text-decoration: none;
+      font-size: $font-sm;
+      color: $color-secondary;
+
+      &:hover {
+        color: $color-tertiary;
+      }
+    }
+  }
+}
+
+//mixins
+@mixin heading-styles($font-size) {
+  font-size: $font-size;
+  color: $color-secondary;
   text-align: center;
-  font-family: 'Courier New', Courier, monospace;
-  font-weight: 600;
+}
+
+@mixin transition($para...) {
+  transition: $para;
+}
+
+.heading {
+  background-color: $color-quaternary;
+}
+
+//function definition
+@function size-multiplier($size: 15px) {
+  // default parameter
+  @return $size * 2;
+}
+
+.banner {
+  p {
+    font-size: size-multiplier($font-sm); //function call
+  }
+  h1 {
+    @extend .heading; //extending class "heading"
+    @include heading-styles($font-lg); //including the mixin
+    @include transition(background-color 300ms, color 300ms);
+
+    &:hover {
+      background-color: $color-primary;
+      color: $color-tertiary;
+    }
+  }
+}
+
+.footer {
+  p {
+    font-size: size-multiplier(); //function call with no arguments
+  }
+  h3 {
+    @extend .heading;
+    @include heading-styles($font-md);
+    @include transition(background-color 300ms, color 300ms);
+
+    &:hover {
+      background-color: $color-primary;
+      color: $color-tertiary;
+    }
+  }
 }
