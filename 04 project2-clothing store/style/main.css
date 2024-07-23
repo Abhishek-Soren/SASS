@@ -46,3 +46,45 @@ html {
   font-weight: 500;
   letter-spacing: 0.5rem;
 }
+
+.first-nav {
+  grid-column: 7/10;
+  grid-row: 1/2;
+}
+.first-nav-list {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+}
+.first-nav-item {
+  list-style: none;
+}
+.first-nav-link {
+  color: #333;
+  text-decoration: none;
+  font-size: 1.8rem;
+}
+
+.dropdown {
+  display: none;
+}
+
+.second-nav {
+  grid-column: 3/8;
+  grid-row: 3/4;
+}
+.second-nav-list {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+}
+.second-nav-item {
+  list-style: none;
+}
+.second-nav-link {
+  color: #333;
+  text-decoration: none;
+  font-size: 1.8rem;
+}
