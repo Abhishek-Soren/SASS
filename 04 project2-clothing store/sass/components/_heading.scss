@@ -3,6 +3,10 @@
   grid-row: 2/3;
   text-align: center;
 
+  @include response(lg) {
+    grid-column: 1/-1;
+  }
+
   &-text {
     font-family: "Great Vibes", cursive;
     font-size: size(xl) * 2;

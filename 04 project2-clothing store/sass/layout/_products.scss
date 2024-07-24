@@ -15,6 +15,11 @@
 
   &-wrapper {
     @include flex-position;
+
+    @include response(sm) {
+      flex-direction: column;
+      gap: 5rem;
+    }
   }
 }
 
@@ -50,14 +55,38 @@
     text-align: center;
     transition: all 1s 0.5s;
 
+    @include response(lg) {
+      padding: 1rem;
+    }
+
+    @include response(sm) {
+      padding: 4rem;
+    }
+
     &-heading {
       font-size: size(xl);
+
+      @include response(lg) {
+        font-size: size(md);
+      }
+
+      @include response(sm) {
+        font-size: size(xl) * 1.2;
+      }
     }
 
     &-price {
       font-size: size(lg);
       font-weight: 300;
       margin: 1rem 0;
+
+      @include response(lg) {
+        font-size: size(sm);
+      }
+
+      @include response(sm) {
+        font-size: size(lg) * 1.2;
+      }
 
       span {
         font-weight: 600;
@@ -73,6 +102,16 @@
       border: 0.1rem solid color(quaternary);
       background-color: lighten(color(primary), 20%);
       transition: all 0.3s;
+
+      @include response(lg) {
+        padding: 0.2rem 0.5rem;
+      }
+
+      @include response(sm) {
+        font-size: size(xs) * 1.2;
+
+        padding: 1rem 1rem;
+      }
 
       &:hover {
         background-color: color(quaternary);

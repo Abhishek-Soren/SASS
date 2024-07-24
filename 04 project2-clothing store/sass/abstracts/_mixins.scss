@@ -27,3 +27,46 @@
   justify-content: $just-content;
   align-items: $align-items;
 }
+
+@mixin footer-list {
+  &-heading {
+    font-size: size(lg);
+    color: color(primary);
+  }
+
+  &-item {
+    list-style: none;
+    margin: 1rem 0;
+  }
+
+  &-link {
+    font-size: size(xs);
+    text-decoration: none;
+    color: lighten($color: color(primary), $amount: 15%);
+    transition: color 0.3s;
+
+    &:hover {
+      color: lighten($color: color(primary), $amount: 35%);
+    }
+  }
+}
+
+@mixin response($break-point) {
+  @if ($break-point == xl) {
+    @media (max-width: 1300px) {
+      @content;
+    }
+  } @else if ($break-point == lg) {
+    @media (max-width: 1000px) {
+      @content;
+    }
+  } @else if ($break-point == md) {
+    @media (max-width: 750px) {
+      @content;
+    }
+  } @else if ($break-point == sm) {
+    @media (max-width: 550px) {
+      @content;
+    }
+  }
+}
