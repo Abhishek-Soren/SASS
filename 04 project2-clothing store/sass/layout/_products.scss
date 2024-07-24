@@ -82,3 +82,7 @@
     }
   }
 }
+
+.products-btn {
+  @include flex-position;
+}
